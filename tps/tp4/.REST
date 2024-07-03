@@ -38,10 +38,12 @@ DELETE http://localhost:3000/artistas/2 HTTP/1.1
 ### Obtener albumes
 
 GET http://localhost:3000/albumes HTTP/1.1
+#anda bien
 
 ### Obtener un album por id
 
 GET http://localhost:3000/albumes/1 HTTP/1.1
+#anda bien
 
 ### Crear un album
 
@@ -53,6 +55,8 @@ Content-Type: application/json
   "artista": 3
 }
 
+#anda bien
+
 ### Actualizar un album
 
 PUT http://localhost:3000/albumes/2 HTTP/1.1
@@ -63,9 +67,12 @@ Content-Type: application/json
   "artista": 1
 }
 
+#anda bien
+
 ### Eliminar un album
 
 DELETE http://localhost:3000/albumes/2 HTTP/1.1
+#anda bien
 
 ### Obtener canciones
 
