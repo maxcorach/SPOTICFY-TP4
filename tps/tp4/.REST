@@ -1,10 +1,12 @@
 ### Obtener artistas
 
 GET http://localhost:3000/artistas HTTP/1.1
+#anda bien
 
 ### Obtener un artista por id
 
 GET http://localhost:3000/artistas/1 HTTP/1.1
+#anda bien
 
 ### Crear un artista
 
@@ -15,6 +17,8 @@ Content-Type: application/json
   "nombre": "Artista 3"
 }
 
+#anda bien
+
 ### Actualizar un artista
 
 PUT http://localhost:3000/artistas/3 HTTP/1.1
@@ -24,9 +28,12 @@ Content-Type: application/json
   "nombre": "Artista 2"
 }
 
+#anda bien
+
 ### Eliminar un artista
 
 DELETE http://localhost:3000/artistas/2 HTTP/1.1
+#anda bien
 
 ### Obtener albumes
 

@@ -17,6 +17,8 @@ const getArtistas = async (_, res) => {
             ...
         ]
     */
+   const [rows, fields] = await conn.query('SELECT * from artistas');
+   res.json(rows);
 };
 
 const getArtista = async (req, res) => {
@@ -29,6 +31,9 @@ const getArtista = async (req, res) => {
             "nombre": "Nombre del artista"
         }
     */
+   const id = req.params.id;
+   const [rows, fields] = await conn.query('SELECT * from artistas where artistas.id = ?', [id]);
+   res.json(rows);
 };
 
 const createArtista = async (req, res) => {
@@ -40,6 +45,9 @@ const createArtista = async (req, res) => {
             "nombre": "Nombre del artista",
         }
     */
+   const nombre = req.body.nombre;
+   const [rows, fields] = await conn.query('INSERT INTO artistas (nombre) VALUES (?)', [nombre]);
+   res.send('Se ha creado el artista correctamente!');
 };
 
 const updateArtista = async (req, res) => {
@@ -51,11 +59,18 @@ const updateArtista = async (req, res) => {
             "nombre": "Nombre del artista"
         }
     */
+   const id = req.params.id;
+   const nombre = req.body.nombre;
+   const [rows, fields] = await conn.query('UPDATE artistas SET artistas.nombre = ? WHERE artistas.id = ?', [nombre, id]);
+   res.send('Se ha actualizado correctamente!');
 };
 
 const deleteArtista = async (req, res) => {
     // Completar con la consulta que elimina un artista
     // Recordar que los parámetros de una consulta DELETE se encuentran en req.params
+    const id = req.params.id;
+    const [rows, fields] = await conn.query('DELETE from artistas where artistas.id = ?', [id])
+    res.send('Se ha eliminado correctamente!');
 };
 
 const getAlbumesByArtista = async (req, res) => {
