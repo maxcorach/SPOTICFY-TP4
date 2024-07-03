@@ -77,10 +77,12 @@ DELETE http://localhost:3000/albumes/2 HTTP/1.1
 ### Obtener canciones
 
 GET http://localhost:3000/canciones HTTP/1.1
+#anda bien
 
 ### Obtener una cancion por id
 
 GET http://localhost:3000/canciones/1 HTTP/1.1
+#anda bien
 
 ### Crear una cancion
 
@@ -93,6 +95,8 @@ Content-Type: application/json
   "duracion": 260
 }
 
+#anda bien
+
 ### Actualizar una cancion
 
 PUT http://localhost:3000/canciones/3 HTTP/1.1
@@ -104,13 +108,18 @@ Content-Type: application/json
   "duracion": 260
 }
 
+#anda bien
+
 ### Eliminar una cancion
 
 DELETE http://localhost:3000/canciones/3 HTTP/1.1
+#anda bien
 
 ### Reproducir una cancion
 
 PUT http://localhost:3000/canciones/1/reproducir HTTP/1.1
+
+#anda bien
 
 ### Obtener canciones de un album
 
