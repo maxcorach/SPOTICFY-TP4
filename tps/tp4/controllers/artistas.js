@@ -32,7 +32,7 @@ const deleteArtista = async (req, res) => {
 
 const getAlbumesByArtista = async (req, res) => {
     const id = req.params.id;
-    const [rows, fields] = await conn.query('SELECT albumes.nombre', [id]);
+    const [rows, fields] = await conn.query('SELECT albumes.nombre, artistas.nombre FROM albumes JOIN artistas ON artistas.id WHERE artistas.id = ?', [id]);
     res.json(rows);
 };
 
