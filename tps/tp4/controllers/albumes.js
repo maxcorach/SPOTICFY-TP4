@@ -85,7 +85,7 @@ const getCancionesByAlbum = async (req, res) => {
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getCanciones
     const id = req.params.id;
-    const [rows, fields] = await conn.query('SELECT * from canciones JOIN albumes.id where canciones.album = albumes.id where canciones.album = ?', [id]);
+    const [rows, fields] = await conn.query('SELECT canciones.nombre FROM canciones JOIN albumes ON canciones.album = albumes.id WHERE canciones.album = ?', [id]);
     res.json(rows)
 };
 

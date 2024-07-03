@@ -77,6 +77,9 @@ const getAlbumesByArtista = async (req, res) => {
     // Completar con la consulta que devuelve las canciones de un artista
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getAlbumes
+    const id = req.params.id;
+    const [rows, fields] = await conn.query('SELECT canciones.nombre from canciones JOIN albumes.artista from albumes JOIN artistas.id where albumes.artista = artistas.id where artistas.id = ?', [id]);
+    res.json(rows);
 };
 
 const getCancionesByArtista = async (req, res) => {
