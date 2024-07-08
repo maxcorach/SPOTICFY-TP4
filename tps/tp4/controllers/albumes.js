@@ -8,7 +8,7 @@ const getAlbumes = async (_, res) => {
 const getAlbum = async (req, res) => {
    const id = req.params.id;
    const [rows, fields] = await conn.query('SELECT * from albumes where id = ?', [id]);
-   res.json(rows);
+   res.json(rows[0]);
 };
 
 const createAlbum = async (req, res) => {

@@ -8,7 +8,7 @@ const getCanciones = async (_, res) => {
 const getCancion = async (req, res) => {
    const id = req.params.id;
    const [rows, fields] = await conn.query('SELECT * from canciones where id = ?', [id]);
-   res.json(rows);
+   res.json(rows[0]);
 };
 
 const createCancion = async (req, res) => {
